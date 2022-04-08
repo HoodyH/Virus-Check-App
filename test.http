@@ -1,0 +1,12 @@
+# Api test
+
+POST http://localhost:8000/api/check
+Content-Type: application/json
+
+{"target": "1.1.1.1"}
+
+
+###
+
+GET http://127.0.0.1:8000/api/items
+Accept: application/json
