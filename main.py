@@ -26,7 +26,7 @@ async def root():
 @app.post("/api/check", response_model=schemas.Item)
 async def check_item(request: models.CheckRequest, db: Session = Depends(get_db)):
     """check the incoming request on virus total and save data on db"""
-    result = check_on_virustotal(request.target)
+    result = await check_on_virustotal(request.target)
     item_created = crud.create_item(db, schemas.ItemCreate(target=request.target, **result))
     return item_created
 

@@ -2,9 +2,11 @@ import axios from "axios";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import CheckForm from "./components/check/check.component";
-import Result from "./components/result/result.component";
-import RequestList from "./components/list/list.component";
+import CheckForm from "./components/check.component";
+import Result from "./components/result.component";
+import RequestList from "./components/list.component";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 

@@ -1,4 +1,7 @@
 /.idea/
+/.pytest_cache/
 /venv/
+
+app.db
 
 *.pyc

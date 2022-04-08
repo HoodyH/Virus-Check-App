@@ -16,3 +16,9 @@ Check here for the full documentations:
 https://fastapi.tiangolo.com/tutorial/sql-databases/
 
 ### Docker
+
+
+## Run Test
+to run test you have to install pytest
+
+and run: python -m pytest
