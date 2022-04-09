@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 
 class CheckForm extends React.Component {
 
@@ -34,7 +35,12 @@ class CheckForm extends React.Component {
               Some quick example text to build on the card title and make up the bulk of
               the card's content.
             </Card.Text>
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <Form.Control
+              type="text"
+              value={this.state.value}
+              onChange={this.handleChange}
+              placeholder="example.com"
+            />
           </Card.Body>
           <Card.Body>
             <Button type="submit" value="Submit">Check!</Button>

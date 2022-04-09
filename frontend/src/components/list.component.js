@@ -25,7 +25,7 @@ const RequestList = ({ requestList }) => {
           </thead>
           <tbody>
             {requestList && requestList.map(item => {
-              return(<tr>
+              return(<tr key={item.id}>
                 <td>{item.target}</td>
                 <td>{item.is_threat? "Yes": "No"}</td>
                 <td>{item.timestamp}</td>
