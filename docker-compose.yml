@@ -1,7 +1,35 @@
 version: "3"
 services:
-  web:
+
+  app:
     container_name: viruscheckapp
+    restart: always
     build: .
     ports:
       - "80:80"
+    env_file: .env
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  postgres:
+    image: postgres:11
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_LISTEN_PORT=80
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres

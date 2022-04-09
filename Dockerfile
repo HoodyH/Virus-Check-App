@@ -1,9 +1,13 @@
 # Pull base image
 FROM python:3.9
 
-# Set environment varibles
+# Set environment varibles accessible from the outside also after build
 ENV PYTHONUNBUFFERED 1
 WORKDIR /code
+
+# define env variable that have to be set from outside (eg docker compose)
+# args are not editable after app build
+ARG API_KEY
 
 # Install dependencies
 COPY ./requirements.txt /code/requirements.txt

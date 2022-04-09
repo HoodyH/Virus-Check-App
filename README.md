@@ -6,13 +6,25 @@ the Backend it is built with Fastapi and the Frontend with React, all deployed a
 The back end will validate the user request via virustotal api.
 
 ## Run the application
-Open a terminal INSIDE THE PROJECT FOLDER, at the same level of this readme
+before start make sure that you have docker installed on your system,
+if not [install docker](https://docs.docker.com/engine/install/) on your pc.
 
-Then execute the following command
+define a .env file in the root of the project with your personal virustotal api key inside,
+it should look like the following example.
+```conf
+API_KEY=you_api_key
+```
 
+Now open a terminal INSIDE THE PROJECT FOLDER, at the same level of the current readme that you are reading
+and with docker installed in your system execute the following command.
 ```bash
 docker-compose run
 ```
+
+Wait a bit after command ends to let the containers start up.
+
+Enjoy you application at: http://localhost :)
+
 
 ## Project Structure
 Each piece of code is commented to explain how it will work, the following details are about the main modules
