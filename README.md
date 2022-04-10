@@ -82,3 +82,41 @@ How to run the tests:
 python -m pip install pytest
 python -m pytest
 ```
+
+## File structure
+Explanation of each file int the project structure
+```text
+├── backend
+│   ├── core
+│   │   ├── models.py the incoming request model
+│   │   └── virustotal.py the api calls to the virustotoal api
+│   │
+│   ├── db
+│   │   ├── crud.py create read update delete operations
+│   │   ├── database.py the database connection stuff
+│   │   ├── models.py the db tables implementation (columns)
+│   │   └── schemas.py pydantic interfaces to access the data
+│   │
+│   ├── Dockerfile build all the backend
+│   ├── requirements.txt all the dependencies of the backend (python stuff)
+│   └── test.py unit test implemented for pytest https://fastapi.tiangolo.com/tutorial/testing/
+│
+├── frontend
+│   ├── public a folder with public static assets
+│   │
+│   ├── src
+│   │   ├── components
+│   │   │   ├── check.js the component that display the check form
+│   │   │   ├── error.js the component that display the error on wrong url/ip
+│   │   │   ├── list.js the component that display the list with the recent requests
+│   │   │   └── result.js the component that display the result with the data
+│   │   ├── index.css the only style file of the all app
+│   │   └── index.js the main app code with the backed api interrogations and the dispatcher to components
+│   │
+│   ├── Dockerfile build all the frontend
+│   ├── package.json all the dependencies of the package frontend (node stuff)
+│   └── package-lock.json all the list dependencies of the dependencies locks (node stuff)
+│
+├── .env the secret file where to put the api token
+└── docker-compose.yml the file to build everything
+```
