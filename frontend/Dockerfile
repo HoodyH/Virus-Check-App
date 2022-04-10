@@ -1,5 +1,5 @@
 # pull official base image
-FROM node:alpine
+FROM node:lts-alpine
 
 # set working directory
 WORKDIR /app
@@ -8,12 +8,13 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install app dependencies
-COPY package.json ./
-COPY package-lock.json ./
+COPY package.json .
+COPY package-lock.json .
 RUN npm install
 
 # copy app
-COPY . ./
+COPY ./src ./src
+COPY ./public ./public
 
 EXPOSE 3000
 

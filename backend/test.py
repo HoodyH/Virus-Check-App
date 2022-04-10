@@ -4,12 +4,6 @@ from main import app
 client = TestClient(app)
 
 
-def test_read_main():
-    """asset that the main page is loading"""
-    response = client.get("/")
-    assert response.status_code == 302
-
-
 def test_api_check_ip():
     """request analysis for an ip"""
     response = client.post(
@@ -18,7 +12,7 @@ def test_api_check_ip():
             "target": "1.1.1.1",
         },
     )
-    assert response.status_code == 201
+    assert response.status_code == 200
     assert response.json()
     print(response.json())
 
@@ -31,7 +25,7 @@ def test_api_check_url():
             "target": "https://fastapi.tiangolo.com/",
         },
     )
-    assert response.status_code == 201
+    assert response.status_code == 200
     assert response.json()
     print(response.json())
 

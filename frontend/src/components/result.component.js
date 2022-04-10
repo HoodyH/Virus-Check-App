@@ -8,7 +8,10 @@ const Result = ({ result }) => {
       <Card className="text-center mt-3"  border={result.is_threat? "danger" : "success"}>
         <Card.Header>Result</Card.Header>
         <Card.Body>
-          <Card.Title>{result.target} looks {result.is_threat? "<strong>Insecure<strong/>": "Ok :)"}</Card.Title>
+          <Card.Title>
+            <a target="_blank" href={"https://www.virustotal.com/gui/search/" + result.target}>{result.target}</a>
+            &nbsp;looks {result.is_threat? "<strong>Insecure<strong/>": "Ok :)"}
+          </Card.Title>
           <Card.Text>
             Here you can take a look at the number of services
             that have classified that target in the following categories

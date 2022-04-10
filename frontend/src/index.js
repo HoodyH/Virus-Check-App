@@ -39,7 +39,7 @@ class App extends React.Component {
 
       // make the request to the server
       const response = await axios.post(
-        '/api/check',
+        'http://localhost:8000/api/check',
         {target: target}
       );
 
@@ -57,7 +57,7 @@ class App extends React.Component {
 
   // once react has mount load the previous items from the backend
   async componentDidMount() {
-    const response = await axios.get('/api/items');
+    const response = await axios.get('http://localhost:8000/api/items');
     this.setState({ requestList: response.data });
   }
 
