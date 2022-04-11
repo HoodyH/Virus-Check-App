@@ -12,7 +12,7 @@ const Result = ({ result }) => {
             <a target="_blank" href={"https://www.virustotal.com/gui/search/" + encodeURIComponent(encodeURIComponent(result.target))}>
               {result.target}
             </a>
-            &nbsp;looks {result.is_threat? "<strong>Insecure<strong/>": "Ok :)"}
+            &nbsp;looks {result.is_threat? "Insecure": "Ok :)"}
           </Card.Title>
           <Card.Text>
             Here you can take a look at the number of services

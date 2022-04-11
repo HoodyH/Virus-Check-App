@@ -16,11 +16,7 @@ const RequestList = ({ requestList }) => {
               <th>Target</th>
               <th>Is Threat</th>
               <th>Timestamp</th>
-              <th>Harmless</th>
-              <th>Malicious</th>
-              <th>Suspicious</th>
-              <th>Timeout</th>
-              <th>Undetected</th>
+              <th>Results</th>
             </tr>
           </thead>
           <tbody>
@@ -33,11 +29,13 @@ const RequestList = ({ requestList }) => {
                   { year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: 'numeric' }
                   )}
                 </td>
-                <td>{item.harmless}</td>
-                <td>{item.malicious}</td>
-                <td>{item.suspicious}</td>
-                <td>{item.timeout}</td>
-                <td>{item.undetected}</td>
+                <td>
+                  Harmless: {item.harmless}&nbsp;
+                  Malicious: {item.malicious}&nbsp;
+                  Suspicious: {item.suspicious}&nbsp;
+                  Timeout: {item.timeout}&nbsp;
+                  Undetected: {item.undetected}
+                </td>
               </tr>)
             })}
           </tbody>
