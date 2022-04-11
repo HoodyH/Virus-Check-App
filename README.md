@@ -18,7 +18,7 @@ API_KEY=you_api_key
 Now open a terminal INSIDE THE PROJECT FOLDER, at the same level of the current readme that you are reading
 and with docker installed in your system execute the following command.
 ```bash
-docker-compose run
+docker-compose up
 ```
 
 Wait a bit after command ends to let the containers start up.
@@ -67,7 +67,9 @@ Files follow the full standard documentation
 - Dockerfile -> [docs](https://docs.docker.com/engine/reference/builder/)
 - docker.compose.yml -> [docs](https://docs.docker.com/compose/compose-file/)
 
-To deploy the app from terminal just run: `docker-compose run`
+To build and deploy the app from terminal just run: `docker-compose up`
+
+If you want to recompile the new changes you have to delete the containers and the images that you have to re-build
 
 
 ### Tests
@@ -84,7 +86,7 @@ python -m pytest
 ```
 
 ## File structure
-Explanation of each file int the project structure
+Explanation of each file in the project structure
 ```text
 ├── backend
 │   ├── core
@@ -118,5 +120,7 @@ Explanation of each file int the project structure
 │   └── package-lock.json all the list dependencies of the dependencies locks (node stuff)
 │
 ├── .env the secret file where to put the api token
+├── .gitignore all the stuff that have to be excluded from git, eg secrets or db files
 └── docker-compose.yml the file to build everything
+└── Procfile config file for heroku cloud (not needed in this project, used just to share the development)
 ```
