@@ -9,7 +9,9 @@ const Result = ({ result }) => {
         <Card.Header>Result</Card.Header>
         <Card.Body>
           <Card.Title>
-            <a target="_blank" href={"https://www.virustotal.com/gui/search/" + result.target}>{result.target}</a>
+            <a target="_blank" href={"https://www.virustotal.com/gui/search/" + encodeURIComponent(encodeURIComponent(result.target))}>
+              {result.target}
+            </a>
             &nbsp;looks {result.is_threat? "<strong>Insecure<strong/>": "Ok :)"}
           </Card.Title>
           <Card.Text>

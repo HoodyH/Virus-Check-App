@@ -28,7 +28,11 @@ const RequestList = ({ requestList }) => {
               return(<tr key={item.id}>
                 <td>{item.target}</td>
                 <td>{item.is_threat? "Yes": "No"}</td>
-                <td>{item.timestamp}</td>
+                <td>{new Date(item.timestamp).toLocaleDateString(
+                  undefined,
+                  { year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: 'numeric' }
+                  )}
+                </td>
                 <td>{item.harmless}</td>
                 <td>{item.malicious}</td>
                 <td>{item.suspicious}</td>
