@@ -57,6 +57,11 @@ all the implementation of the database it is inside the `db` folder.
 What it's inside the db it is a FULL STANDARD IMPLEMENTATION to know more about this read the 
 [fast api documentation](https://fastapi.tiangolo.com/tutorial/sql-databases/)
 
+The database chosen it's postgres, and it's inside a container built by the docker compose.
+The db connection string for sqlalchemy is this `postgresql://postgres:postgres@localhost/postgres`
+
+Since the image is the official one see the [postgres image here](https://hub.docker.com/_/postgres/)
+
 ### Docker
 The app will be built with docker with docker-compose.
 To use docker you need to [install docker](https://docs.docker.com/engine/install/) on your pc.
